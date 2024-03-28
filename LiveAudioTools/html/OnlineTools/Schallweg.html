@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schallweg [m]</title>
+
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../javascript/script.js"></script>
+
+</head>
+
+<body>
+  <nav class="menuMobile" role="navigation" aria-label="Mobile Menu">
+    <a href="../index.html"><img class="menu_logo" src="../../media/img/LiveAudioTools_Logo.png"
+        alt="LiveAudioTools Logo"></a>
+    <a href="../MobileMenu.html">
+      <div id="menuMobileIconContainer">
+        <div class="menuMobileIcon"></div>
+        <div class="menuMobileIcon"></div>
+        <div class="menuMobileIcon"></div>
+      </div>
+    </a>
+  </nav>
+  <nav class="menu" role="navigation" aria-label="Menu">
+    <a href="../index.html"><img class="menu_logo" src="../../media/img/LiveAudioTools_Logo.png"
+        alt="LiveAudioTools Logo">
+    </a>
+    <ul class="menu_ulist">
+      <li class="menu_list"><a class="menu_anker" href="../index.html">Home</a></li>
+      <li class="dropdown">
+        <a class="menu_dropdown_anker" href="#">Online Tools</a>
+        <div class="dropdown-content">
+          <a class="menu_dropdown_anker2" href="../OnlineTools/Laufzeit.html">Laufzeit / Delay [ms]</a>
+          <a class="menu_dropdown_anker2" href="../OnlineTools/Schallweg.html">Schallweg [m]</a>
+          <a class="menu_dropdown_anker2" href="../OnlineTools/CSA.html">Sub-Arrays: Cardioid</a>
+          <a class="menu_dropdown_anker2" href="../OnlineTools/Endfire.html">Sub-Arrays: Endfire</a>
+        </div>
+      </li>
+      <li class="menu_list"><a class="menu_anker" href="../index.html#about">Über LiveAudioTools</a></li>
+    </ul>
+  </nav>
+
+  <main id="SchallwegMain" role="main">
+
+    <div class="ToolContainer1" role="heading">
+      <h1 class="ToolHeading">Schallweg berechnen</h1>
+    </div>
+
+    <div class="ToolContainer2" aria-label="result">
+      <h1 class="ToolErgebnisHeading" id="SchallwegErgebnis">0 m</h1>
+    </div>
+
+    <div class="ToolContainerCalc" role="form" aria-label="calculator">
+      <form class="ToolForm" id="SchallwegForm">
+        <div class="ToolInputLabelContainer">
+          <input type="number" class="ToolNumberInput" id="SchallwegInputLaufzeit" placeholder="0">
+          <label class="ToolInputLabel" for="SchallwegInputLaufzeit">ms</label>
+        </div>
+        <div class="ToolInputLabelContainer">
+          <input type="number" class="ToolNumberInput" id="SchallwegInputTemperatur" placeholder="20">
+          <label class="ToolInputLabel" for="SchallwegInputTemperatur">°C</label>
+        </div>
+        <div class="ToolInputLabelContainer">
+          <input type="checkbox" class="ToolCheckboxInput" id="SchallwegInputRunden" name="haasEffect" checked>
+          <label class="ToolCheckboxLabel" id="SchallwegRundenCheckboxLabel" for="SchallwegInputRunden">Ergb.
+            runden</label>
+        </div>
+        <div>
+          <button class="ToolCalcButton" id="SchallwegBerechnenButton" type="button">Schallweg [m] berechen</button>
+        </div>
+      </form>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footerP">2024 LiveAudioTools online <a class="footerA" href="../Impressum.html">Impressum und
+        Bildnachweise</a></p>
+  </footer>
+
+</body>
+
+</html>

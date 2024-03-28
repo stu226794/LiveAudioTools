@@ -1,0 +1,854 @@
+:root {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    --logo-width: 110px;
+
+    --menu-color: rgba(0, 26, 27, 0.8);
+    --menu-hor-padding: 50px;
+    --menu-ver-padding: 10px;
+
+    --menu-anker-padding: 20px;
+    --menu-anker-font-size: 20px;
+    --menu-anker-color: rgb(255, 255, 255);
+    --menu-anker-transformSpeed: 0.5s;
+    --menu-anker-transformSize: 1.03;
+
+    --menu-dropdown-font-size: 16px;
+    --menu-dropdown-color: rgb(0, 0, 0);
+
+    --buttonColor: #23d5ab;
+    --buttonColorHover: #fe18c4;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 
+###############################
+CSS Abschnitt: MENU
+In: ../html/index.html
+In: ../html/OnlineTools/Laufzeit.html
+*/
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: var(--menu-hor-padding);
+    padding-right: var(--menu-hor-padding);
+    padding-top: var(--menu-ver-padding);
+    padding-bottom: var(--menu-ver-padding);
+
+    background-color: var(--menu-color);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.menu_logo {
+    width: var(--logo-width);
+    height: auto;
+}
+
+.menu_ulist {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu_list {
+    margin-left: var(--menu-anker-padding);
+}
+
+.dropdown {
+    margin-left: var(--menu-anker-padding);
+}
+
+.menu_anker,
+.menu_dropdown_anker {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--menu-anker-color);
+    font-size: var(--menu-anker-font-size);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 2px;
+}
+
+
+.dropdown-content a {
+    color: var(--menu-dropdown-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu_anker,
+.menu_dropdown_anker {
+    transition: var(--menu-anker-transformSpeed);
+}
+
+.menu_anker:hover,
+.menu_dropdown_anker:hover {
+    transform: scale(var(--menu-anker-transformSize));
+}
+
+
+.menu_dropdown_anker2:hover {
+    background-color: #23d5ab;
+    color: white;
+}
+
+
+/* 
+###############################
+CSS Abschnitt: Mobile Menu
+*/
+
+.menuMobile {
+    /*HTML Element für Nav Element auf den jeweiligen HTML Seiten*/
+    display: none;
+    background-color: black;
+}
+
+#menuMobileSiteMain {
+    /*Main Element auf Menu HTML Seite für mobiles Menu*/
+    height: 100vh;
+    width: 100vw;
+
+    border: 0.1px solid transparent;
+    /* Lösung für Abstandsproblem */
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: Gradient 30s ease infinite;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#menuMobileSiteNav{
+    /*Nav Element auf Menu HTML Seite für mobiles Menu*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuMobileAnker, .menuMobileAnker2{
+    color: white;
+    list-style: none;
+    text-align: center;
+}
+
+.menuMobileAnker{
+    font-size: 2rem;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.menuMobileAnker2{
+    font-size: 1.5rem;
+    padding: 1.2rem;
+    text-decoration: none;
+}
+
+#menuMobileDropdownContent{
+    display: none;
+    background-color: rgba(255, 255, 255, 0.332);
+    flex-direction: column;
+
+    margin: 1rem;
+    margin-top: 0;
+
+    border-radius: 10px; 
+}
+
+
+/* 
+###############################
+CSS Abschnitt: Footer
+In: ../html/index.html
+In: ../html/OnlineTools/Laufzeit.html
+...
+*/
+
+.footer {
+    background-color: #23d5ab;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.footerP,
+.footerA {
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+
+
+
+
+/* 
+###############################
+CSS Abschnitt: MAIN WELCOME
+In: ../html/index.html
+*/
+
+#welcome {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 0.1px solid transparent;
+    /* Lösung für Abstandsproblem */
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: Gradient 30s ease infinite;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#welcomeContainer1 {
+    flex: 1;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcomeH1 {
+    font-size: 4rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 0.4rem;
+}
+
+#welcomeSubtext {
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    margin-top: 0.4rem;
+}
+
+#welcomeButton {
+    display: inline-block;
+    margin-top: 2.2rem;
+    padding: 10px 20px;
+    font-size: 2em;
+    color: #fff;
+    background-color: var(--buttonColor);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#welcomeButton:hover {
+    background-color: var(--buttonColorHover);
+}
+
+#welcomeButton::after {
+    content: "\00a0\279C";
+    /* Unicode for a heart */
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+/* 
+###############################
+CSS Abschnitt: MAIN ABOUT
+In: ../html/index.html
+*/
+
+#about {
+    height: auto;
+    width: 100;
+
+    padding-bottom: 2rem;
+
+    background: linear-gradient(-45deg, #1e88e5, #d739ff, #ff5722, #ff9800);
+    background-size: 400% 400%;
+    animation: Gradient 30s ease infinite;
+
+    border: 0.1px solid transparent;
+    /* Lösung für Abstandsproblem */
+
+    display: flex;
+    flex-direction: row;
+}
+
+#aboutContainer1 {
+    flex: 1;
+}
+
+#aboutH1 {
+    font-size: 3rem;
+    text-align: justify;
+    color: white;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+}
+
+#aboutH2 {
+    font-size: 2rem;
+    text-align: justify;
+    color: white;
+    margin-top: 1rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+}
+
+.aboutP {
+    font-size: 1.2rem;
+    text-align: justify;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+}
+
+#aboutButton {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: var(--buttonColor);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-left: 3rem;
+}
+
+#aboutButton:hover {
+    background-color: var(--buttonColorHover);
+}
+
+#aboutButton::after {
+    content: "\00a0\279C";
+    /* Unicode for a heart */
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/*###############################
+CSS Abschnitt: Impressum
+In: ../html/Impressum.html
+*/
+
+#impressumMain {
+    margin-top: 0;
+    height: 100vh;
+
+    background: linear-gradient(-45deg, #1e88e5, #d739ff, #ff5722, #ff9800);
+    background-size: 400% 400%;
+    animation: Gradient 50s ease infinite;
+
+    border: 0.1px solid transparent;
+    /* Lösung für Abstandsproblem */
+}
+
+.impressumH1 {
+    margin-top: 40px;
+}
+
+#impressumH1Top {
+    margin-top: 110px;
+}
+
+.impressumBlock {
+    margin-top: 40px;
+}
+
+.impressumH1,
+.impressumP,
+.impressumA,
+.impressumLi {
+    color: white;
+}
+
+.impressumArticle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+}
+
+
+/*###############################
+CSS Abschnitt: Laufzeit
+In: ../html/OnlineTools/Laufzeit.html
+*/
+
+#LaufzeitMain {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: Gradient 30s ease infinite;
+}
+
+
+/*###############################
+CSS Abschnitt: Schallweg
+In: ../html/OnlineTools/Schallweg.html
+*/
+
+#SchallwegMain {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: Gradient 30s ease infinite;
+}
+
+/*###############################
+CSS Abschnitt: CSA 
+In: ../html/OnlineTools/CSA.html
+*/
+
+#CSAMain, #EndfireMain {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: Gradient 30s ease infinite;
+}
+
+
+
+/*###############################
+CSS Abschnitt: Formatierung aller Rechner- und Eingabeelemente
+In: ../html/OnlineTools/Laufzeit.html
+*/
+
+.ToolContainer1 {
+    background-color: transparent;
+    margin: 10px;
+    height: fit-content;
+}
+
+.ToolHeading {
+    font-size: 3.5rem;
+    color: white;
+}
+
+.ToolContainer2 {
+    background-color: transparent;
+    margin: 35px;
+    height: fit-content;
+}
+
+.ToolErgebnisHeading {
+    font-size: 7rem;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.ToolContainerInfoCalc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ToolContainerInfo {
+    margin-left: 50px;
+    margin-right: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ToolImgInfoContainer {
+    width: 600px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.ToolAnkerInfoContainer {
+    color: white;
+}
+
+
+.ToolContainerCalc {
+    margin-top: 1px;
+    padding-top: 1px;
+}
+
+.ToolForm {
+    width: auto;
+    padding: 20px;
+    margin: 5px;
+    display: block;
+    flex-direction: column;
+}
+
+
+.ToolInputLabelContainer {
+    background-color: #23d5ab;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 50px;
+    width: 13rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.ToolInputLabel {
+    flex: 1;
+    background-color: transparent;
+    border-style: none;
+    font-size: 1.5rem;
+    color: white;
+    text-align: left;
+    width: auto;
+}
+
+.ToolNumberInput {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    width: 5rem;
+    height: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    padding-right: 0.5rem;
+    color: white;
+}
+
+.ToolNumberInput:hover {
+    outline: none;
+}
+
+.ToolNumberInput:focus {
+    outline: none;
+}
+
+.ToolNumberInput::placeholder {
+    color: white;
+}
+
+.ToolNumberInput::-webkit-inner-spin-button,
+.ToolNumberInput::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.ToolCheckboxInput {
+    width: 25px;
+    height: 25px;
+}
+
+.ToolCheckboxLabel {
+    flex: 1;
+    background-color: transparent;
+    border-style: none;
+    font-size: 1.5rem;
+    color: white;
+    text-align: left;
+    width: auto;
+    padding-left: 0.5rem;
+
+}
+
+.ToolCalcButton {
+    background-color: #fa70f1;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 50px;
+    width: 13rem;
+    height: 5rem;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ToolCalcButton:hover {
+    background-color: var(--buttonColor);
+}
+
+
+/*###############################
+CSS Abschnitt: Spezifische Formatierung aller Rechner- und Eingabeelemente
+In: ../html/OnlineTools/Schallweg.html
+*/
+
+#SchallwegRundenCheckboxLabel,
+#LaufzeitRundenCheckboxLabel {
+    font-size: 1.3rem;
+}
+
+
+
+/* ###############################
+CSS-Formatierung für Smartphones und Geräte mit einer Breite von maximal 768px
+*/
+@media screen and (max-width: 768px) {
+
+
+/*CSS media Query: MENU*/
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menuMobile {
+        width: 100%;
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 8rem;
+        box-sizing: border-box;
+    }
+
+    .menu_logo {
+        width: 40vw;
+        height: auto;
+        margin: 2vw;
+    }
+
+    #menuMobileIconContainer {
+        width: 50px;
+        height: 45px;
+        margin: 6vw;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menuMobileIcon {
+        width: 50px;
+        height: 8px;
+        background-color: white;
+        border-radius: 2px;
+    }
+
+    .footer{
+        height: 100%;
+    }
+
+    .footerP{
+        text-align: center;
+    }
+
+/*###############################
+CSS media Query: index.html
+*/
+    #indexMain {
+        width: 100%;
+        height: 100%;
+    }
+
+    #welcome {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+   #welcomeContainer1{
+    margin: 4vw;
+    height: 100%;
+   }
+
+   #welcomeH1, #welcomeSubtext{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3rem;
+   }
+
+   #welcomeH1{
+    font-size: 3rem;
+   }
+
+   #welcomeSubtext{
+    font-size: 1.8rem;
+   }
+
+   #about{
+    height: 100%;
+   }
+
+    #aboutContainer1{
+        margin: 4vw;
+        height: 100%;
+    }
+
+    #aboutH1, #aboutH2, .aboutP{
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+
+    #aboutH1{
+        font-size: 3rem;
+        margin-top: 4vw;;
+    }
+
+    #aboutH2{
+        font-size: 1.8rem;
+    }
+
+    #aboutButton{
+        margin: 0.4rem;
+        margin-left: 0;
+    }
+
+/*###############################
+CSS media Query: Impressum.html
+*/
+
+    #impressumMain{
+        width: 100%;
+        height: 100%;
+    }
+
+    .impressumArticle{
+        margin: 4vw;
+        padding: 0;
+    }
+
+    #impressumH1Top{
+        margin-top: 4vw;
+        font-size: 3rem;
+    }
+
+
+/*###############################
+CSS media Query: Tools
+*/
+
+    #LaufzeitMain, #SchallwegMain, #CSAMain, #EndfireMain{
+        width: 100%;
+        height: 100%;
+        justify-self: flex-start;
+    }
+
+    .ToolHeading{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .ToolErgebnisHeading{
+        font-size: 7rem;
+    }
+
+    .ToolContainerInfo{
+        margin: 4vw;
+    }
+
+    .ToolImgInfoContainer{
+        width: 90%;
+    }
+}
+
+/*###############################
+CSS media Query: Viewports mit einer Höhe von maximal 860px
+*/
+
+@media screen and (max-height: 900px){
+    #LaufzeitMain, #SchallwegMain, #CSAMain, #EndfireMain{
+        height: 100%;
+    
+    }
+    .ToolContainer1{
+        margin-top: 100px;
+    }
+
+    .ToolContainerInfo{
+        margin-bottom: 30px;
+    }
+}
